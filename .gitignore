@@ -5,3 +5,4 @@ __pycache__
 *$py.class
 *.pyc
 LittleLemon/LittleLemon/__pycache__/settings.cpython-312.pyc
+LittleLemon/.env
