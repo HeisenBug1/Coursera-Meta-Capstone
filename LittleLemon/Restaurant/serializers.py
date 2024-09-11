@@ -9,7 +9,8 @@ class MenuSerializer(serializers.ModelSerializer):
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
-        fields = ['id', 'name', 'no_of_guests', 'booking_date']
+        # fields = ['id', 'name', 'no_of_guests', 'booking_date']
+        fields = '__all__'
 
 
 # this UserSerializer class was included as TIP in the prompt (not sure when i'll use it)
