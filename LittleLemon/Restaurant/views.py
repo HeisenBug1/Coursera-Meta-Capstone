@@ -7,7 +7,7 @@ from .serializers import MenuSerializer
 def index(request):
     return render(request, 'index.html', {})
 
-class MenuItemView(ListCreateAPIView):
+class MenuItemsView(ListCreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
