@@ -89,6 +89,7 @@ try:
     DATABASE_USER = env('DB_USER')
     DATABASE_PASSWORD = env('DB_PASSWORD')
 except ImportError:
+    # Set DB credentials here if not using .env file at project root dir for DB credentials
     DATABASE_USER = 'root'
     DATABASE_PASSWORD = 'root_password'
 
