@@ -95,12 +95,18 @@ except ImportError:
     DATABASE_USER = 'root'
     DATABASE_PASSWORD = 'root_password'
 
-# using PyMySQL in MacOS since mysqlclient does not work if MySQL server is not installed locally
+# Try PyMySQL in MacOS if mysqlclient does not work since MySQL server is not installed locally
 import platform
 
 if platform.system() == "Darwin":
-    import pymysql
-    pymysql.install_as_MySQLdb()
+    try:
+        # Try default "mysqlclient" first
+        import MySQLdb
+    except ImportError as e:
+        print("Failed to import MySQLdb:", e)
+        print("Trying: PyMySQL instead")
+        import pymysql
+        pymysql.install_as_MySQLdb()
 
 DATABASES = {
     'default': {
