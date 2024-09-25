@@ -95,7 +95,9 @@ except ImportError:
     DATABASE_USER = 'root'
     DATABASE_PASSWORD = 'root_password'
 
-# Try PyMySQL in MacOS if mysqlclient does not work since MySQL server is not installed locally
+"""
+Try PyMySQL in MacOS if mysqlclient does not work since MySQL server is not installed locally
+"""
 import platform
 
 if platform.system() == "Darwin":
