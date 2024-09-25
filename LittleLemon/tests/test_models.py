@@ -33,4 +33,4 @@ class MenuModelTestCase(TestCase):
         self.assertEqual(self.menu_item.inventory, 100)
 
     def test_menu_str(self):
-        self.assertEqual(str(self.menu_item), "Pasta")
+        self.assertEqual(str(self.menu_item), "Pasta : 12.99")
