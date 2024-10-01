@@ -80,10 +80,11 @@ WSGI_APPLICATION = 'LittleLemon.wsgi.application'
 """
 OPTIONAL: use .env file to store and use DB user and password
 otherwise assign your DB user and password in DATABASE_USER & DATABASE_PASSWORD below
-under except ImportError
 """
-import os
+DATABASE_USER = 'root'
+DATABASE_PASSWORD = 'root_password'
 
+import os
 try:
     import environ
     env = environ.Env()
@@ -91,9 +92,7 @@ try:
     DATABASE_USER = env('DB_USER')
     DATABASE_PASSWORD = env('DB_PASSWORD')
 except ImportError:
-    # Set DB credentials here if not using .env file at project root dir for DB credentials
-    DATABASE_USER = 'root'
-    DATABASE_PASSWORD = 'root_password'
+    print(".env file not found. Using default values")
 
 """
 Try PyMySQL in MacOS if mysqlclient does not work since MySQL server is not installed locally
@@ -114,6 +113,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'LittleLemon',
+        # please set the user/pass above
         'USER': DATABASE_USER,
         'PASSWORD': DATABASE_PASSWORD,
         'HOST': '192.168.1.11',
