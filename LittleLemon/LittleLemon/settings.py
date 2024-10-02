@@ -116,6 +116,7 @@ DATABASES = {
         # please set the user/pass above
         'USER': DATABASE_USER,
         'PASSWORD': DATABASE_PASSWORD,
+        # update HOST below according to your setup
         'HOST': '192.168.1.11',
         'PORT': '3306',
         'OPTIONS': {
